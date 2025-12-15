@@ -1,0 +1,508 @@
+/* ========================================================== */
+/* 1. Global Styles and Customization (Black, White & Royal Blue) */
+/* ========================================================== */
+
+:root {
+    /* USER DEFINED COLORS */
+    --primary-black: #0C0C0C; 
+    --pure-white: #FFFFFF; 
+    --royal-blue: #3B5BDB; /* Accent Blue for CTA/Highlights */
+    --soft-gold: #FFC107; /* Soft Gold/Amber color for sub-headline attraction */
+
+    /* MAPPING TO CSS VARIABLES */
+    --primary-color: var(--royal-blue); 
+    --secondary-color: var(--primary-black); 
+    --text-color-dark: var(--primary-black); 
+    --text-color-light: var(--pure-white); 
+    --background-color-main: var(--pure-white); 
+    --section-bg-alt: #1F1F1F; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    line-height: 1.6;
+    color: var(--text-color-dark); 
+    background: var(--background-color-main); 
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ========================================================== */
+/* 2. Header and Hero Section (Black BG, White Text) */
+/* ========================================================== */
+
+.urgency-bar {
+    background: var(--primary-color); 
+    color: var(--text-color-light); 
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 2px; 
+}
+
+.hero-section {
+    background: var(--secondary-color); 
+    color: var(--text-color-light);
+    text-align: center;
+    padding-bottom: 60px;
+    border-bottom: 5px solid var(--primary-color); 
+}
+
+.hero-section h1 {
+    font-size: 3.8em; 
+    margin-top: 50px;
+    font-weight: 900; 
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* --- HEADLINE COLOR SPLIT CSS --- */
+.hero-section h1 .h1-part-white {
+    color: var(--pure-white); 
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+    display: block; 
+}
+
+.hero-section h1 .h1-part-blue {
+    color: var(--primary-color); 
+    text-shadow: 0 0 6px rgba(59, 91, 219, 0.6);
+    display: block; 
+    margin-top: 5px; 
+}
+
+.hero-section .sub-headline {
+    font-size: 1.6em; 
+    font-weight: 300; 
+    color: var(--text-color-light); 
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+    line-height: 1.5; 
+}
+.hero-section .sub-headline .accent-gold {
+    color: var(--soft-gold); 
+    font-weight: 700; 
+}
+.hero-section .sub-headline .accent-blue-bold {
+    color: var(--primary-color); 
+    font-weight: 900; 
+}
+
+/* Product Image (UPDATED: Forcing Left Alignment) */
+.product-img {
+    /* Max width INCREASED to 85% for maximum size */
+    max-width: 85%; 
+    height: auto;
+    
+    /* LEFT ALIGNMENT FIX: 
+       Container ke left edge par shift karo */
+    margin: 40px auto 40px 0; /* Left margin 0% kar diya */
+    
+    display: block; 
+    border: none;
+    border-radius: 0;
+}
+
+/* Hero section mein hi content left align karna hoga */
+.hero-section .container {
+    text-align: left; /* Image ko left push karne ke liye */
+}
+
+/* Lekin text/timer center mein chahiye, toh unko override karo: */
+.hero-section h1, .hero-section .sub-headline, 
+.hero-section .guarantee-text {
+    text-align: center;
+}
+
+/* Timer aur Button ko Center mein maintain rakho (Yeh pehle se kiya tha) */
+.countdown-timer, .cta-button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile responsive size adjustment */
+@media (max-width: 768px) {
+    .product-img {
+        /* Mobile par center rakho (95% width) */
+        max-width: 95%; 
+        margin: 30px auto; /* Center/Auto margin */
+    }
+}
+
+/* ========================================================== */
+/* 3. Countdown Timer Style (FIXED POSITIONING) */
+/* ========================================================== */
+
+.countdown-timer {
+    /* **FIXED** Ensures it takes its own line and is centered */
+    display: block; 
+    width: fit-content; 
+    margin: 20px auto 30px auto; /* Centered horizontally */
+    
+    /* Existing Styling */
+    font-size: 2.2em; 
+    font-weight: 700;
+    color: var(--secondary-color); 
+    background: var(--pure-white); 
+    padding: 12px 30px; 
+    border-radius: 5px;
+    border: 3px solid var(--primary-color); 
+    box-shadow: 0 0 10px rgba(59, 91, 219, 0.5); 
+}
+
+/* ========================================================== */
+/* 4. CTA Button Style (FIXED POSITIONING & STYLING) */
+/* ========================================================== */
+
+.cta-button {
+    /* **FIXED** Ensures it centers below the timer */
+    display: block; 
+    margin: 30px auto 20px auto; /* Centered horizontally */
+    width: fit-content; /* Width only covers content */
+    max-width: 90%; /* Mobile control */
+    
+    /* Basic Styling */
+    padding: 18px 35px; 
+    text-decoration: none;
+    text-align: center;
+    font-size: 24px; 
+    font-weight: 900; 
+    line-height: 1.2;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: all 0.1s ease;
+    white-space: normal; 
+}
+
+/* Primary CTA Styling (Making it POP!) */
+.primary-cta {
+    background-color: var(--primary-color); /* Royal Blue */
+    color: var(--text-color-light); /* White/Light Color */
+    border: 3px solid var(--soft-gold); /* Gold border around the blue button */
+    
+    /* 3D/Depth Effect */
+    box-shadow: 0 8px 0 0 #0056b3; /* Darker blue shadow for 3D effect */
+    transform: translateY(0);
+}
+
+/* Hover Effect (Making it pressable) */
+.primary-cta:hover {
+    background-color: #0066cc; /* Thoda lighter on hover */
+    box-shadow: 0 4px 0 0 #0056b3; /* Shadow kam hoga */
+    transform: translateY(4px); /* Button thoda neeche press hoga */
+}
+
+/* Mobile Responsiveness for CTA */
+@media (max-width: 600px) {
+    .cta-button {
+        padding: 15px 25px;
+        font-size: 20px; 
+        width: 100%; /* Mobile par full width */
+        max-width: 95%;
+    }
+}
+/* ========================================================== */
+/* 5. Section Styles (White BG, Black Text) */
+/* ========================================================== */
+
+section {
+    padding: 80px 0;
+    text-align: center;
+    background: var(--background-color-main); 
+    color: var(--text-color-dark); 
+}
+
+section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: var(--secondary-color); 
+    display: inline-block;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--primary-color); 
+}
+
+/* --- VIDEO DEMO SECTION STYLE --- */
+.video-demo-section {
+    background: var(--background-color-main); 
+    padding: 60px 0;
+}
+.video-demo-section .sub-headline {
+    color: #444; 
+}
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+}
+.video-item {
+    width: calc(50% - 30px); 
+    max-width: 500px; 
+    height: auto;
+    border: 4px solid var(--primary-color); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    overflow: hidden;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+.video-item:hover {
+    transform: translateY(-5px); 
+    border: 4px solid var(--secondary-color); 
+}
+.video-item iframe, .video-item video {
+    display: block;
+    width: 100%;
+    height: 300px; 
+}
+
+
+/* --- FEATURES SECTION (Black BG) --- */
+.features-section {
+    background: var(--secondary-color); 
+    color: var(--text-color-light); 
+}
+.features-section h2 {
+    color: var(--primary-color); 
+    border-bottom-color: var(--primary-color);
+}
+.feature-list ul {
+    list-style: none;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.feature-list li {
+    background: var(--section-bg-alt); 
+    margin: 15px 0;
+    padding: 25px;
+    border-left: 6px solid var(--primary-color); 
+    color: var(--text-color-light); 
+    font-size: 1.3em;
+    font-weight: 400;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: background 0.3s ease; 
+}
+.feature-list li:hover {
+    background: var(--primary-black); 
+    cursor: default; 
+}
+
+/* --- PROOF & GROWTH SECTIONS (White and Black Alternating) --- */
+.proof-section, .growth-section {
+    padding: 60px 0;
+}
+
+.proof-section {
+    background: var(--background-color-main); 
+}
+
+.growth-section {
+    background: var(--secondary-color); 
+    color: var(--text-color-light);
+}
+.growth-section h2 {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+.growth-section .sub-headline {
+    color: #A0A0A0;
+}
+
+.proof-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.proof-grid img {
+    width: calc(25% - 22.5px); 
+    max-width: 300px; 
+    height: auto;
+    border: 3px solid var(--primary-color); 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; 
+}
+.proof-grid img:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* --- SECOND CTA SECTION (Black BG) --- */
+.second-cta-section {
+    background: var(--secondary-color);
+    color: var(--text-color-light);
+    padding: 60px 0;
+}
+.second-cta-section h2 {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* --- FAQ SECTION (White BG) --- */
+.faq-section {
+    background: var(--background-color-main);
+}
+.faq-item {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    padding: 25px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background: var(--pure-white); 
+    color: var(--text-color-dark); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(59, 91, 219, 0.2); 
+}
+.faq-item h3 {
+    font-size: 1.3em;
+    color: var(--secondary-color); 
+    margin-bottom: 10px;
+}
+
+/* ========================================================== */
+/* 6. Footer Style (Black BG) */
+/* ========================================================== */
+
+footer {
+    background: var(--secondary-color);
+    color: #A0A0A0; 
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid var(--primary-color);
+}
+
+/* ========================================================== */
+/* --- Modal Pop-up Styling --- */
+/* ========================================================== */
+
+.modal-overlay {
+    /* Full screen dark overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Default hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Always on top */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    color: #333;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the disabled Continue button */
+#modalContinueBtn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: 15px;
+    background-color: #ccc; /* Disabled color */
+    color: #888;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: background-color 0.3s, cursor 0.3s;
+}
+
+#modalContinueBtn.active {
+    background-color: var(--primary-color); /* Primary color jab active ho */
+    color: white;
+    cursor: pointer;
+}
+
+/* Simple animation for appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ========================================================== */
+/* 7. Responsiveness */
+/* ========================================================== */
+@media (max-width: 992px) {
+    /* Tablet View: Videos 2x2, Images 2x2 */
+    .video-item {
+        width: calc(50% - 15px);
+        max-width: none;
+    }
+    .proof-grid img {
+        width: calc(50% - 20px);
+        max-width: none;
+    }
+}
+@media (max-width: 768px) {
+    /* Mobile View: Videos 2x2, Images 2x2 (But bigger) */
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .cta-button {
+        font-size: 1.5em;
+        padding: 18px 10px;
+    }
+    .video-item {
+        width: calc(50% - 15px);
+    }
+    .video-item iframe, .video-item video {
+        height: 180px; 
+    }
+    .proof-grid img {
+        width: calc(50% - 15px);
+        max-width: 300px;
+    }
+}
+@media (max-width: 480px) {
+    /* Small Mobile: Everything 1 per row */
+    .hero-section h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+    .video-item, .proof-grid img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .video-item iframe, .video-item video {
+        height: 200px;
+    }
+}
