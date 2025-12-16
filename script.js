@@ -1,7 +1,7 @@
 // =======================================================
 // ** IMPORTANT: REPLACE THIS LINK WITH YOUR ACTUAL PAYMENT GATEWAY LINK **
 // =======================================================
-const PAYMENT_LINK = "APNA_INSTAMOJO_YA_RAZORPAY_PAYMENT_LINK_YAHA_DALO"; 
+const PAYMENT_LINK = 'https://rzp.io/rzp/V7Fm5Cdy'; 
 // **********************************************************************
 
 // --- Modal Pop-up Variables ---
@@ -88,4 +88,5 @@ function startCountdown() {
 }
 
 // Function ko call karte hain jab page load ho jaaye
+
 startCountdown();
