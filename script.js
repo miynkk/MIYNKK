@@ -1,7 +1,7 @@
 // =======================================================
 // ** IMPORTANT: REPLACE THIS LINK WITH YOUR ACTUAL PAYMENT GATEWAY LINK **
 // =======================================================
-const PAYMENT_LINK = "https://rzp.io/rzp/pzOFjRB"; 
+const PAYMENT_LINK = "https://pages.razorpay.com/stores/st_Rvp19t6CzodMO2"; 
 // **********************************************************************
 
 // --- Modal Pop-up Variables ---
@@ -90,6 +90,7 @@ function startCountdown() {
 // Function ko call karte hain jab page load ho jaaye
 
 startCountdown();
+
 
 
 
