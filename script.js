@@ -1,7 +1,7 @@
 // =======================================================
 // ** IMPORTANT: REPLACE THIS LINK WITH YOUR ACTUAL PAYMENT GATEWAY LINK **
 // =======================================================
-const PAYMENT_LINK = "https://rzp.io/rzp/V7Fm5Cdy"; 
+const PAYMENT_LINK = "https://rzp.io/rzp/pzOFjRB"; 
 // **********************************************************************
 
 // --- Modal Pop-up Variables ---
@@ -90,5 +90,6 @@ function startCountdown() {
 // Function ko call karte hain jab page load ho jaaye
 
 startCountdown();
+
 
 
